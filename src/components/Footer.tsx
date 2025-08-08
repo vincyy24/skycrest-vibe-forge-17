@@ -1,0 +1,115 @@
+import { MapPin, Phone, Mail } from "lucide-react";
+
+const Footer = () => {
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
+  return (
+    <footer className="bg-background border-t border-border py-12 px-6">
+      <div className="container mx-auto max-w-7xl">
+        <div className="grid md:grid-cols-4 gap-8">
+          {/* Brand */}
+          <div className="space-y-4">
+            <h3 className="text-2xl font-orbitron font-bold neon-text">SKYCREST</h3>
+            <p className="text-muted-foreground font-saira leading-relaxed">
+              Where vibes meet victory. The ultimate gaming destination in Faridabad.
+            </p>
+            <div className="flex space-x-4">
+              <div className="w-10 h-10 bg-primary/20 rounded-lg flex items-center justify-center cursor-pointer hover:bg-primary/30 transition-colors">
+                <span className="font-orbitron font-bold text-primary text-sm">IG</span>
+              </div>
+              <div className="w-10 h-10 bg-primary/20 rounded-lg flex items-center justify-center cursor-pointer hover:bg-primary/30 transition-colors">
+                <span className="font-orbitron font-bold text-primary text-sm">DC</span>
+              </div>
+              <div className="w-10 h-10 bg-primary/20 rounded-lg flex items-center justify-center cursor-pointer hover:bg-primary/30 transition-colors">
+                <span className="font-orbitron font-bold text-primary text-sm">YT</span>
+              </div>
+              <div className="w-10 h-10 bg-primary/20 rounded-lg flex items-center justify-center cursor-pointer hover:bg-primary/30 transition-colors">
+                <span className="font-orbitron font-bold text-primary text-sm">WA</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Quick Links */}
+          <div className="space-y-4">
+            <h4 className="text-lg font-rajdhani font-semibold text-primary">Quick Links</h4>
+            <div className="space-y-2">
+              <button
+                onClick={() => scrollToSection("arena")}
+                className="block text-muted-foreground hover:text-primary transition-colors font-saira"
+              >
+                Gaming Zones
+              </button>
+              <button
+                onClick={() => scrollToSection("membership")}
+                className="block text-muted-foreground hover:text-primary transition-colors font-saira"
+              >
+                Membership
+              </button>
+              <button
+                onClick={() => scrollToSection("community")}
+                className="block text-muted-foreground hover:text-primary transition-colors font-saira"
+              >
+                Tournaments
+              </button>
+              <button
+                onClick={() => scrollToSection("booking")}
+                className="block text-muted-foreground hover:text-primary transition-colors font-saira"
+              >
+                Book Now
+              </button>
+            </div>
+          </div>
+
+          {/* Gaming Zones */}
+          <div className="space-y-4">
+            <h4 className="text-lg font-rajdhani font-semibold text-primary">Gaming Zones</h4>
+            <div className="space-y-2 text-muted-foreground font-saira">
+              <div>PC Standard</div>
+              <div>PC Plus</div>
+              <div>Console Lounge</div>
+              <div>Racing Simulator</div>
+            </div>
+          </div>
+
+          {/* Contact */}
+          <div className="space-y-4">
+            <h4 className="text-lg font-rajdhani font-semibold text-primary">Contact Info</h4>
+            <div className="space-y-3">
+              <div className="flex items-center space-x-3">
+                <MapPin className="w-4 h-4 text-primary" />
+                <span className="text-sm text-muted-foreground font-saira">
+                  Skycrest Gaming Cafe, SCO 52, First Floor, Omaxe World Street, Sector 79, Faridabad, Haryana - 121004
+                </span>
+              </div>
+              <div className="flex items-center space-x-3">
+                <Phone className="w-4 h-4 text-primary" />
+                <span className="text-sm text-muted-foreground font-saira">
+                  +91 96258 05997
+                </span>
+              </div>
+              <div className="flex items-center space-x-3">
+                <Mail className="w-4 h-4 text-primary" />
+                <span className="text-sm text-muted-foreground font-saira">
+                  hello@skycrestgaming.com
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="border-t border-border mt-12 pt-8 text-center">
+          <p className="text-muted-foreground font-saira">
+            © 2024 Skycrest Gaming Café. All rights reserved. Built for gamers, by gamers.
+          </p>
+        </div>
+      </div>
+    </footer>
+  );
+};
+
+export default Footer;
