@@ -45,23 +45,19 @@ const Footer = () => {
                 Gaming Zones
               </button>
               <button
-                onClick={() => scrollToSection("membership")}
-                className="block text-muted-foreground hover:text-primary transition-colors font-saira"
-              >
-                Membership
-              </button>
-              <button
                 onClick={() => scrollToSection("community")}
                 className="block text-muted-foreground hover:text-primary transition-colors font-saira"
               >
                 Tournaments
               </button>
-              <button
-                onClick={() => scrollToSection("booking")}
+              <a
+                href="https://skycrest.booking.enes.tech/authentication"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="block text-muted-foreground hover:text-primary transition-colors font-saira"
               >
                 Book Now
-              </button>
+              </a>
             </div>
           </div>
 

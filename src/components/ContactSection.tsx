@@ -1,45 +1,7 @@
-import { useState } from "react";
-import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Textarea } from "@/components/ui/textarea";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { MapPin, Phone, Mail, Clock } from "lucide-react";
-import { useToast } from "@/hooks/use-toast";
 
 const ContactSection = () => {
-  const { toast } = useToast();
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    package: "",
-    date: "",
-    time: "",
-    message: ""
-  });
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    toast({
-      title: "Booking Request Sent!",
-      description: "We'll contact you shortly to confirm your gaming session.",
-    });
-    setFormData({
-      name: "",
-      email: "",
-      phone: "",
-      package: "",
-      date: "",
-      time: "",
-      message: ""
-    });
-  };
-
-  const handleInputChange = (field: string, value: string) => {
-    setFormData(prev => ({ ...prev, [field]: value }));
-  };
 
   return (
     <section id="booking" className="py-20 px-6 bg-muted/10">
@@ -55,7 +17,7 @@ const ContactSection = () => {
         </div>
 
         <div className="grid lg:grid-cols-2 gap-12">
-          {/* Booking Form */}
+          {/* Booking Portal Link */}
           <Card className="glass-card">
             <CardHeader>
               <CardTitle className="text-2xl font-orbitron font-bold text-primary">
@@ -63,119 +25,17 @@ const ContactSection = () => {
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="grid md:grid-cols-2 gap-4">
-                  <div className="space-y-2">
-                    <Label htmlFor="name" className="font-rajdhani font-semibold">
-                      Full Name
-                    </Label>
-                    <Input
-                      id="name"
-                      value={formData.name}
-                      onChange={(e) => handleInputChange("name", e.target.value)}
-                      placeholder="Enter your name"
-                      required
-                      className="bg-background/50 border-border focus:border-primary"
-                    />
-                  </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="email" className="font-rajdhani font-semibold">
-                      Email Address
-                    </Label>
-                    <Input
-                      id="email"
-                      type="email"
-                      value={formData.email}
-                      onChange={(e) => handleInputChange("email", e.target.value)}
-                      placeholder="your@email.com"
-                      required
-                      className="bg-background/50 border-border focus:border-primary"
-                    />
-                  </div>
-                </div>
-
-                <div className="space-y-2">
-                  <Label htmlFor="phone" className="font-rajdhani font-semibold">
-                    Phone Number
-                  </Label>
-                  <Input
-                    id="phone"
-                    value={formData.phone}
-                    onChange={(e) => handleInputChange("phone", e.target.value)}
-                    placeholder="+91 9876543210"
-                    required
-                    className="bg-background/50 border-border focus:border-primary"
-                  />
-                </div>
-
-                <div className="space-y-2">
-                  <Label className="font-rajdhani font-semibold">Gaming Package</Label>
-                  <Select value={formData.package} onValueChange={(value) => handleInputChange("package", value)}>
-                    <SelectTrigger className="bg-background/50 border-border focus:border-primary">
-                      <SelectValue placeholder="Select gaming package" />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="pc-standard-3">PC Standard - 3 Hours</SelectItem>
-                      <SelectItem value="pc-standard-5">PC Standard - 5 Hours</SelectItem>
-                      <SelectItem value="pc-standard-10">PC Standard - 10 Hours</SelectItem>
-                      <SelectItem value="pc-plus-3">PC Plus - 3 Hours</SelectItem>
-                      <SelectItem value="pc-plus-5">PC Plus - 5 Hours</SelectItem>
-                      <SelectItem value="pc-plus-10">PC Plus - 10 Hours</SelectItem>
-                      <SelectItem value="console-3">Console - 3 Hours</SelectItem>
-                      <SelectItem value="console-5">Console - 5 Hours</SelectItem>
-                      <SelectItem value="console-10">Console - 10 Hours</SelectItem>
-                      <SelectItem value="racing-sim">Racing Simulator</SelectItem>
-                    </SelectContent>
-                  </Select>
-                </div>
-
-                <div className="grid md:grid-cols-2 gap-4">
-                  <div className="space-y-2">
-                    <Label htmlFor="date" className="font-rajdhani font-semibold">
-                      Preferred Date
-                    </Label>
-                    <Input
-                      id="date"
-                      type="date"
-                      value={formData.date}
-                      onChange={(e) => handleInputChange("date", e.target.value)}
-                      min={new Date().toISOString().split('T')[0]}
-                      required
-                      className="bg-background/50 border-border focus:border-primary"
-                    />
-                  </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="time" className="font-rajdhani font-semibold">
-                      Preferred Time
-                    </Label>
-                    <Input
-                      id="time"
-                      type="time"
-                      value={formData.time}
-                      onChange={(e) => handleInputChange("time", e.target.value)}
-                      required
-                      className="bg-background/50 border-border focus:border-primary"
-                    />
-                  </div>
-                </div>
-
-                <div className="space-y-2">
-                  <Label htmlFor="message" className="font-rajdhani font-semibold">
-                    Special Requests (Optional)
-                  </Label>
-                  <Textarea
-                    id="message"
-                    value={formData.message}
-                    onChange={(e) => handleInputChange("message", e.target.value)}
-                    placeholder="Any special requirements or requests..."
-                    className="bg-background/50 border-border focus:border-primary min-h-[100px]"
-                  />
-                </div>
-
-                <Button type="submit" className="w-full btn-gaming text-lg py-6">
-                  Book Your Session
-                </Button>
-              </form>
+              <p className="text-muted-foreground font-saira mb-6">
+                We’ve moved bookings to our online portal. Click below to reserve your slot.
+              </p>
+              <a
+                href="https://skycrest.booking.enes.tech/authentication"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full btn-gaming text-lg py-6 inline-flex items-center justify-center rounded-md"
+              >
+                Go to Booking Portal
+              </a>
             </CardContent>
           </Card>
 

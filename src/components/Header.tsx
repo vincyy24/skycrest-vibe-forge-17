@@ -56,12 +56,6 @@ const Header = () => {
               Arena
             </button>
             <button
-              onClick={() => scrollToSection("membership")}
-              className="text-foreground hover:text-primary transition-colors font-rajdhani font-medium"
-            >
-              Membership
-            </button>
-            <button
               onClick={() => scrollToSection("community")}
               className="text-foreground hover:text-primary transition-colors font-rajdhani font-medium"
             >
@@ -75,11 +69,10 @@ const Header = () => {
             </button>
           </nav>
 
-          <Button
-            onClick={() => scrollToSection("booking")}
-            className="btn-gaming hidden md:block"
-          >
-            Book Now
+          <Button asChild className="btn-gaming hidden md:block">
+            <a href="https://skycrest.booking.enes.tech/authentication" target="_blank" rel="noopener noreferrer">
+              Book Now
+            </a>
           </Button>
         </div>
       </div>

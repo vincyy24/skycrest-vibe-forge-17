@@ -1,31 +1,9 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Calendar, Trophy, Users, Quote } from "lucide-react";
+import { tournaments as upcomingEvents } from "@/data/tournaments";
 
 const CommunitySection = () => {
-  const upcomingEvents = [
-    {
-      title: "VALORANT Championship",
-      date: "Dec 15, 2024",
-      prize: "₹50,000",
-      participants: "64 Teams",
-      status: "Registration Open"
-    },
-    {
-      title: "FIFA Tournament",
-      date: "Dec 22, 2024", 
-      prize: "₹25,000",
-      participants: "32 Players",
-      status: "Coming Soon"
-    },
-    {
-      title: "CS2 Arena Cup",
-      date: "Jan 5, 2025",
-      prize: "₹75,000",
-      participants: "128 Teams", 
-      status: "Early Bird"
-    }
-  ];
 
   const testimonials = [
     {
@@ -91,44 +69,58 @@ const CommunitySection = () => {
             </div>
 
             <div className="space-y-4">
-              {upcomingEvents.map((event, index) => (
-                <Card key={index} className="glass-card hover:bg-primary/5 transition-colors">
-                  <CardHeader className="pb-3">
-                    <div className="flex items-start justify-between">
-                      <CardTitle className="text-xl font-orbitron text-foreground">
-                        {event.title}
-                      </CardTitle>
-                      <Badge 
-                        className={`font-rajdhani ${
-                          event.status === "Registration Open" 
-                            ? "bg-primary text-primary-foreground" 
-                            : event.status === "Early Bird"
-                            ? "bg-secondary text-secondary-foreground"
-                            : "bg-muted text-muted-foreground"
-                        }`}
-                      >
-                        {event.status}
-                      </Badge>
-                    </div>
-                  </CardHeader>
-                  <CardContent className="pt-0">
-                    <div className="grid grid-cols-3 gap-4 text-sm">
-                      <div className="flex items-center space-x-2">
-                        <Calendar className="w-4 h-4 text-primary" />
-                        <span>{event.date}</span>
-                      </div>
-                      <div className="flex items-center space-x-2">
-                        <Trophy className="w-4 h-4 text-secondary" />
-                        <span className="font-semibold">{event.prize}</span>
-                      </div>
-                      <div className="flex items-center space-x-2">
-                        <Users className="w-4 h-4 text-primary" />
-                        <span>{event.participants}</span>
-                      </div>
+              {upcomingEvents.length === 0 ? (
+                <Card className="glass-card p-6 text-center">
+                  <CardContent className="p-0">
+                    <div className="flex flex-col items-center gap-3">
+                      <Trophy className="w-6 h-6 text-secondary" />
+                      <p className="font-rajdhani text-lg">No upcoming tournaments yet</p>
+                      <p className="text-sm text-muted-foreground font-saira">
+                        Follow us for announcements and new event dates.
+                      </p>
                     </div>
                   </CardContent>
                 </Card>
-              ))}
+              ) : (
+                upcomingEvents.map((event, index) => (
+                  <Card key={index} className="glass-card hover:bg-primary/5 transition-colors">
+                    <CardHeader className="pb-3">
+                      <div className="flex items-start justify-between">
+                        <CardTitle className="text-xl font-orbitron text-foreground">
+                          {event.title}
+                        </CardTitle>
+                        <Badge 
+                          className={`font-rajdhani ${
+                            event.status === "Registration Open" 
+                              ? "bg-primary text-primary-foreground" 
+                              : event.status === "Early Bird"
+                              ? "bg-secondary text-secondary-foreground"
+                              : "bg-muted text-muted-foreground"
+                          }`}
+                        >
+                          {event.status}
+                        </Badge>
+                      </div>
+                    </CardHeader>
+                    <CardContent className="pt-0">
+                      <div className="grid grid-cols-3 gap-4 text-sm">
+                        <div className="flex items-center space-x-2">
+                          <Calendar className="w-4 h-4 text-primary" />
+                          <span>{event.date}</span>
+                        </div>
+                        <div className="flex items-center space-x-2">
+                          <Trophy className="w-4 h-4 text-secondary" />
+                          <span className="font-semibold">{event.prize}</span>
+                        </div>
+                        <div className="flex items-center space-x-2">
+                          <Users className="w-4 h-4 text-primary" />
+                          <span>{event.participants}</span>
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+                ))
+              )}
             </div>
           </div>
 

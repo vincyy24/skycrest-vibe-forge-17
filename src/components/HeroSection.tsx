@@ -42,11 +42,10 @@ const HeroSection = () => {
           >
             Explore Arena
           </Button>
-          <Button
-            onClick={() => scrollToSection("booking")}
-            className="btn-outline-gaming text-lg px-10 py-6"
-          >
-            Book Your Slot
+          <Button asChild className="btn-outline-gaming text-lg px-10 py-6">
+            <a href="https://skycrest.booking.enes.tech/authentication" target="_blank" rel="noopener noreferrer">
+              Book Your Slot
+            </a>
           </Button>
         </div>
       </div>
