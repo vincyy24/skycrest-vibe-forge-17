@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { ChevronDown } from "lucide-react";
 import heroImage from "@/assets/hero-gaming-cafe.jpg";
+import gamingCafeLogo from "@/assets/gaming-cafe-logo.svg"; // Importing the logo
 
 const HeroSection = () => {
   const scrollToSection = (sectionId: string) => {
@@ -13,7 +14,7 @@ const HeroSection = () => {
   return (
     <section className="relative h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image with Overlay */}
-      <div 
+      <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: `url(${heroImage})` }}
       >
@@ -25,10 +26,19 @@ const HeroSection = () => {
       <div className="relative z-10 text-center space-y-8 px-6 max-w-4xl mx-auto">
         <h1 className="text-6xl md:text-8xl font-orbitron font-black tracking-tight">
           <span className="block neon-text">WELCOME TO</span>
-          <span className="block text-secondary neon-amber">SKYCREST</span>
-          <span className="block text-3xl md:text-5xl font-rajdhani font-light mt-4 tracking-wider">
-            GAMING CAFÉ
-          </span>
+          <div className="relative grid place-items-center">
+            <img
+              src={gamingCafeLogo}
+              alt="Skycrest Gaming Cafe Logo"
+              className="block mx-auto w-72 md:w-96 neon-amber col-start-1 row-start-1"
+            />
+            <img
+              src={gamingCafeLogo}
+              alt="Glow behing logo"
+              className="absolute w-[19rem] md:w-[25rem] blur-md col-start-1 row-start-1"
+            />
+
+          </div>
         </h1>
 
         <p className="text-xl md:text-2xl font-titillium text-muted-foreground max-w-2xl mx-auto leading-relaxed">

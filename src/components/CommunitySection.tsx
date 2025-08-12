@@ -7,30 +7,30 @@ const CommunitySection = () => {
 
   const testimonials = [
     {
-      name: "Arjun Patel",
-      role: "Pro Gamer",
-      text: "Best vibes since '25. The atmosphere here is unmatched!",
-      rating: 5
-    },
-    {
-      name: "Priya Sharma", 
+      name: "Divyansh Bihani",
       role: "Casual Gamer",
-      text: "Amazing setup and friendly community. My weekend hangout spot!",
+      text: "THE EXPERIENCE OF GAMING IS VERY AMAZING THE STAFF ARE VERY POLITE THE PRIZE ARE ALSO VERY AFFORDABLE.",
       rating: 5
     },
     {
-      name: "Rohit Kumar",
-      role: "Esports Enthusiast", 
-      text: "Top-tier equipment and lightning-fast internet. Perfect for competitive gaming.",
+      name: "Eeshan Pandey",
+      role: "Pro Gamer",
+      text: "Amazing place for Gaming with reasonable prices!! Highly recommend:)",
+      rating: 5
+    },
+    {
+      name: "Altaf khan",
+      role: "Esports Enthusiast",
+      text: "Nice setup and premium environment.",
       rating: 5
     }
   ];
 
   const achievements = [
-    { number: "1000+", label: "Happy Gamers" },
-    { number: "50+", label: "Tournaments Hosted" },
-    { number: "₹5L+", label: "Prizes Distributed" },
-    { number: "24/7", label: "Gaming Support" }
+    // { number: "100+", label: "Happy Gamers" },
+    // { number: "50+", label: "Tournaments Hosted" },
+    // { number: "₹5L+", label: "Prizes Distributed" },
+    // { number: "24/7", label: "Gaming Support" }
   ];
 
   return (
@@ -47,19 +47,20 @@ const CommunitySection = () => {
         </div>
 
         {/* Achievements Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16">
-          {achievements.map((achievement, index) => (
-            <div key={index} className="text-center glass-card p-6 rounded-xl">
-              <div className="text-3xl md:text-4xl font-orbitron font-bold text-primary mb-2">
-                {achievement.number}
+        {achievements.length > 0 && (
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16">
+            {achievements.map((achievement, index) => (
+              <div key={index} className="text-center glass-card p-6 rounded-xl">
+                <div className="text-3xl md:text-4xl font-orbitron font-bold text-primary mb-2">
+                  {achievement.number}
+                </div>
+                <div className="text-sm text-muted-foreground font-rajdhani">
+                  {achievement.label}
+                </div>
               </div>
-              <div className="text-sm text-muted-foreground font-rajdhani">
-                {achievement.label}
-              </div>
-            </div>
-          ))}
-        </div>
-
+            ))}
+          </div>
+        )}
         <div className="grid lg:grid-cols-2 gap-12">
           {/* Upcoming Events */}
           <div className="space-y-6">
@@ -89,14 +90,13 @@ const CommunitySection = () => {
                         <CardTitle className="text-xl font-orbitron text-foreground">
                           {event.title}
                         </CardTitle>
-                        <Badge 
-                          className={`font-rajdhani ${
-                            event.status === "Registration Open" 
-                              ? "bg-primary text-primary-foreground" 
-                              : event.status === "Early Bird"
+                        <Badge
+                          className={`font-rajdhani ${event.status === "Registration Open"
+                            ? "bg-primary text-primary-foreground"
+                            : event.status === "Early Bird"
                               ? "bg-secondary text-secondary-foreground"
                               : "bg-muted text-muted-foreground"
-                          }`}
+                            }`}
                         >
                           {event.status}
                         </Badge>

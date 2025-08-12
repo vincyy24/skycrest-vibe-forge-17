@@ -158,6 +158,17 @@
   .glow-pulse {
     animation: glowPulse 2s ease-in-out infinite;
   }
+
+  /* Glow Effect for Images */
+  .glow-image {
+    animation: glowPulse 2s ease-in-out infinite;
+    transition: transform 0.3s ease;
+  }
+
+  /* Scale Effect on Hover */
+  .glow-image:hover {
+    transform: scale(1.1);
+  }
 }
 
 @keyframes slideInLeft {
@@ -195,10 +206,10 @@
 
 @keyframes glowPulse {
   0%, 100% {
-    box-shadow: 0 0 20px hsl(var(--primary));
+    box-shadow: 0 0 10px hsl(var(--primary)), 0 0 20px hsl(var(--primary));
   }
   50% {
-    box-shadow: 0 0 40px hsl(var(--primary)), 0 0 60px hsl(var(--secondary));
+    box-shadow: 0 0 20px hsl(var(--primary)), 0 0 40px hsl(var(--primary));
   }
 }
 
