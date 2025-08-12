@@ -20,11 +20,7 @@ const Footer = () => {
                 src={skycrestLogo}
                 alt="Skycrest Gaming Cafe Logo"
                 className="w-44 h-auto grow max-h-32 col-start-1 row-start-1"
-              />
-              <img
-                src={skycrestLogo}
-                alt="glow for logo"
-                className="w-44 h-auto grow max-h-32 col-start-1 row-start-1 blur-sm"
+                style={{ filter: 'drop-shadow(0 0 4px #87CEEB) drop-shadow(0 0 15px #B0E0E6)' }}
               />
             </div>
             <p className="text-muted-foreground font-saira leading-relaxed">

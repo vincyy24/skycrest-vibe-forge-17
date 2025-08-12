@@ -16,28 +16,22 @@ const HeroSection = () => {
       {/* Background Image with Overlay */}
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: `url(${heroImage})` }}
-      >
+        style={{ backgroundImage: `url(${heroImage})` }}>
         <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/40 to-background/80"></div>
         <div className="absolute inset-0 grid-lines opacity-20"></div>
       </div>
 
       {/* Hero Content */}
       <div className="relative z-10 text-center space-y-8 px-6 max-w-4xl mx-auto">
-        <h1 className="text-6xl md:text-8xl font-orbitron font-black tracking-tight">
+        <h1 className="text-5xl md:text-8xl font-orbitron font-black tracking-tight">
           <span className="block neon-text">WELCOME TO</span>
           <div className="relative grid place-items-center">
             <img
               src={gamingCafeLogo}
               alt="Skycrest Gaming Cafe Logo"
-              className="block mx-auto w-72 md:w-96 neon-amber col-start-1 row-start-1"
+              className="block mx-auto w-80 md:w-[30rem] col-start-1 row-start-1"
+              style={{ filter: 'drop-shadow(0 0 8px #f59e0b ) drop-shadow(0 0 15px #f59e0b )' }}
             />
-            <img
-              src={gamingCafeLogo}
-              alt="Glow behing logo"
-              className="absolute w-[19rem] md:w-[25rem] blur-md col-start-1 row-start-1"
-            />
-
           </div>
         </h1>
 

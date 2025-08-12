@@ -32,19 +32,12 @@ const Header = () => {
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           <div className="flex items-center relative">
-            {/* Blurred glow effect behind */}
-            <img 
-              src={SkycrestLogo} 
-              alt="" 
-              className="absolute h-12 w-auto blur-md opacity-60"
-              style={{ filter: 'invert(1) drop-shadow(0 0 15px #87CEEB) drop-shadow(0 0 25px #B0E0E6)' }}
-            />
             {/* Main logo */}
             <img 
               src={SkycrestLogo} 
               alt="Skycrest Logo" 
               className="relative h-12 w-auto"
-              style={{ filter: 'invert(1) drop-shadow(0 0 8px #87CEEB) drop-shadow(0 0 15px #B0E0E6)' }}
+              style={{ filter: 'drop-shadow(0 0 8px #87CEEB) drop-shadow(0 0 15px #B0E0E6)' }}
             />
           </div>
 

@@ -174,18 +174,29 @@ const CommunitySection = () => {
             Stay connected with the latest tournaments, events, and gaming news.
           </p>
           <div className="flex justify-center space-x-6">
-            <div className="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center cursor-pointer hover:bg-primary/30 transition-colors">
-              <span className="font-orbitron font-bold text-primary">IG</span>
-            </div>
-            <div className="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center cursor-pointer hover:bg-primary/30 transition-colors">
+            <a href="https://www.google.com/search?q=Skycrest+Gaming+Cafe" target="_blank"
+              rel="noopener noreferrer" className="h-12 p-2 bg-primary/20 rounded-lg flex items-center justify-center cursor-pointer hover:bg-primary/30 transition-colors">
+              <span className="font-orbitron font-bold text-primary">Google</span>
+            </a>
+
+            <a href="https://www.instagram.com/skycrest_gaming_cafe" target="_blank"
+              rel="noopener noreferrer">
+              <div className="p-2 h-12 bg-primary/20 rounded-lg flex items-center justify-center cursor-pointer hover:bg-primary/30 transition-colors">
+                <span className="font-orbitron font-bold text-primary">Instagram</span>
+              </div>
+            </a>
+            {/* <div className="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center cursor-pointer hover:bg-primary/30 transition-colors">
               <span className="font-orbitron font-bold text-primary">DC</span>
             </div>
             <div className="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center cursor-pointer hover:bg-primary/30 transition-colors">
               <span className="font-orbitron font-bold text-primary">YT</span>
-            </div>
-            <div className="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center cursor-pointer hover:bg-primary/30 transition-colors">
-              <span className="font-orbitron font-bold text-primary">WA</span>
-            </div>
+            </div> */}
+            <a href="https://wa.me/919625805997?text=Hello%2C%20I%20am%20interested%20to%20know%20about%20your%20cafe" target="_blank"
+              rel="noopener noreferrer">
+              <div className="p-2 h-12 bg-primary/20 rounded-lg flex items-center justify-center cursor-pointer hover:bg-primary/30 transition-colors">
+                <span className="font-orbitron font-bold text-primary">Whatsapp</span>
+              </div>
+            </a>
           </div>
         </div>
       </div>
