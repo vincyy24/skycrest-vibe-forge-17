@@ -13,7 +13,7 @@ const AboutSection = () => {
 
             <div className="space-y-6 text-lg text-muted-foreground font-saira leading-relaxed">
               <p>
-                At Skycrest, tradition fuses with tomorrow—every frame, every fiber, 
+                At Skycrest, tradition fuses with tomorrow - every frame, every fiber, 
                 crafted for the connoisseur of competition.
               </p>
               <p>
@@ -27,14 +27,15 @@ const AboutSection = () => {
               </p>
             </div>
 
-            <div className="grid grid-cols-3 gap-6 pt-8">
+            <div className="grid grid-cols-3 gap-6 pt-8 items-center">
               <div className="text-center">
-                <div className="text-3xl font-orbitron font-bold text-primary">50+</div>
-                <div className="text-sm text-muted-foreground">Gaming Stations</div>
+                <div className="text-3xl font-orbitron font-bold text-primary leading-tight">Multiple  </div><span className="text-l font-orbitron font-bold text-primary ">Gaming Zones</span>
+                <div className="text-sm text-muted-foreground">PCs • Consoles • Racing Sim</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-orbitron font-bold text-secondary">24/7</div>
+                <div className="text-3xl font-orbitron font-bold text-secondary">~12 Hrs</div>
                 <div className="text-sm text-muted-foreground">Open Daily</div>
+                <div className="text-xs text-muted-foreground">11:00 AM - 10:30 PM</div>
               </div>
               <div className="text-center">
                 <div className="text-3xl font-orbitron font-bold text-primary">4K</div>

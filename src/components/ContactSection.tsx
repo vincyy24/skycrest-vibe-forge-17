@@ -103,7 +103,7 @@ const ContactSection = () => {
                 </div>
                 <div>
                   <h4 className="font-rajdhani font-semibold text-foreground">Email</h4>
-                  <p className="text-muted-foreground font-saira">hello@skycrestgaming.com</p>
+                  <p className="text-muted-foreground font-saira">contact@skycrestgaming.com</p>
                 </div>
               </div>
 
@@ -114,7 +114,7 @@ const ContactSection = () => {
                 <div>
                   <h4 className="font-rajdhani font-semibold text-foreground">Hours</h4>
                   <p className="text-muted-foreground font-saira">
-                    24/7 Open<br />
+                    Opens 11:00 AM - 10:30 PM<br />
                     <span className="text-xs">All Days of the Week</span>
                   </p>
                 </div>

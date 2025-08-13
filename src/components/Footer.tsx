@@ -28,26 +28,23 @@ const Footer = () => {
               Faridabad.
             </p>
             <div className="flex space-x-4">
-              <div className="w-10 h-10 bg-primary/20 rounded-lg flex items-center justify-center cursor-pointer hover:bg-primary/30 transition-colors">
-                <span className="font-orbitron font-bold text-primary text-sm">
-                  IG
-                </span>
-              </div>
-              <div className="w-10 h-10 bg-primary/20 rounded-lg flex items-center justify-center cursor-pointer hover:bg-primary/30 transition-colors">
-                <span className="font-orbitron font-bold text-primary text-sm">
-                  DC
-                </span>
-              </div>
-              <div className="w-10 h-10 bg-primary/20 rounded-lg flex items-center justify-center cursor-pointer hover:bg-primary/30 transition-colors">
-                <span className="font-orbitron font-bold text-primary text-sm">
-                  YT
-                </span>
-              </div>
-              <div className="w-10 h-10 bg-primary/20 rounded-lg flex items-center justify-center cursor-pointer hover:bg-primary/30 transition-colors">
-                <span className="font-orbitron font-bold text-primary text-sm">
-                  WA
-                </span>
-              </div>
+              <a href="https://www.google.com/search?q=Skycrest+Gaming+Cafe" target="_blank"
+                rel="noopener noreferrer" className="h-12 px-3 p-2 bg-primary/20 rounded-lg flex items-center justify-center cursor-pointer hover:bg-primary/30 transition-colors">
+                <span className="font-orbitron font-bold text-primary">G</span>
+              </a>
+
+              <a href="https://www.instagram.com/skycrest_gaming_cafe" target="_blank"
+                rel="noopener noreferrer">
+                <div className="p-2 h-12 px-3 bg-primary/20 rounded-lg flex items-center justify-center cursor-pointer hover:bg-primary/30 transition-colors">
+                  <span className="font-orbitron font-bold text-primary">IG</span>
+                </div>
+              </a>
+              <a href="https://wa.me/919625805997?text=Hello%2C%20I%20am%20interested%20to%20know%20about%20your%20cafe" target="_blank"
+                rel="noopener noreferrer">
+                <div className="p-2 h-12 px-3 bg-primary/20 rounded-lg flex items-center justify-center cursor-pointer hover:bg-primary/30 transition-colors">
+                  <span className="font-orbitron font-bold text-primary">WA</span>
+                </div>
+              </a>
             </div>
           </div>
 
@@ -115,7 +112,7 @@ const Footer = () => {
               <div className="flex items-center space-x-3">
                 <Mail className="w-4 h-4 text-primary" />
                 <span className="text-sm text-muted-foreground font-saira">
-                  hello@skycrestgaming.com
+                  contact@skycrestgaming.com
                 </span>
               </div>
             </div>
@@ -124,7 +121,7 @@ const Footer = () => {
 
         <div className="border-t border-border mt-12 pt-8 text-center">
           <p className="text-muted-foreground font-saira">
-            &copy; 2025 Skycrest Gaming Café. All rights reserved. Built for
+            &copy; 2025 Skycrest Gaming Caf&eacute;. All rights reserved. Built for
             gamers, by gamers.
           </p>
         </div>

@@ -185,12 +185,6 @@ const CommunitySection = () => {
                 <span className="font-orbitron font-bold text-primary">Instagram</span>
               </div>
             </a>
-            {/* <div className="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center cursor-pointer hover:bg-primary/30 transition-colors">
-              <span className="font-orbitron font-bold text-primary">DC</span>
-            </div>
-            <div className="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center cursor-pointer hover:bg-primary/30 transition-colors">
-              <span className="font-orbitron font-bold text-primary">YT</span>
-            </div> */}
             <a href="https://wa.me/919625805997?text=Hello%2C%20I%20am%20interested%20to%20know%20about%20your%20cafe" target="_blank"
               rel="noopener noreferrer">
               <div className="p-2 h-12 bg-primary/20 rounded-lg flex items-center justify-center cursor-pointer hover:bg-primary/30 transition-colors">

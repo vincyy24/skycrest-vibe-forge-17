@@ -34,4 +34,4 @@ jobs:
           branch: gh-pages
           folder: dist
           clean: true
-          # cname: skycrestgaming.com
+          cname: skycrestgaming.com

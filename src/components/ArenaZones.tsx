@@ -1,6 +1,6 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Monitor, Cpu, Headphones, Wifi } from "lucide-react";
+import { Monitor, Cpu, Headphones, Wifi, Gauge } from "lucide-react";
 import pcStandardImage from "@/assets/pc-standard-row.jpg";
 import pcPlusImage from "@/assets/pc-plus-white.jpg";
 import consoleLoungeImage from "@/assets/console-lounge.jpg";
@@ -37,7 +37,7 @@ const ArenaZones = () => {
     {
       id: 3,
       title: "Console Lounge",
-      subtitle: "4K HDR on 65″ OLEDs, couch-ready",
+      subtitle: "4K HDR on 65\" OLEDs, couch-ready",
       image: consoleLoungeImage,
       specs: [
         { icon: Monitor, label: "65\" OLED", detail: "4K 120Hz HDR" },
@@ -56,7 +56,7 @@ const ArenaZones = () => {
         { icon: Monitor, label: "49\" Curved", detail: "Ultra-Wide QHD" },
         { icon: Cpu, label: "Direct Drive", detail: "Force Feedback" },
         { icon: Headphones, label: "3-Pedal", detail: "Clutch, Brake, Gas" },
-        { icon: Wifi, label: "Motion Rig", detail: "Hydraulic Movement" }
+        { icon: Gauge, label: "Racing Sim", detail: "Wheel + Shifter Setup" }
       ],
       align: "right"
     }
