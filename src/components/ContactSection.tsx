@@ -126,16 +126,14 @@ const ContactSection = () => {
           <div className="lg:col-span-2">
             <Card className="glass-card">
               <CardContent className="p-0">
-                <div className="aspect-video bg-gradient-to-br from-primary/20 to-secondary/20 rounded-lg flex items-center justify-center">
-                  <div className="text-center">
-                    <MapPin className="w-16 h-16 text-primary mx-auto mb-4" />
-                    <h4 className="font-orbitron font-semibold text-foreground mb-2">
-                      Find Us Here
-                    </h4>
-                    <p className="text-sm text-muted-foreground">
-                      Interactive map coming soon
-                    </p>
-                  </div>
+                <div className="aspect-video rounded-lg overflow-hidden">
+                  <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3510.049648163305!2d77.35004147549185!3d28.387568375799464!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cddd3dbe30b9b%3A0x3a6afee4db245887!2sSkycrest%20Gaming%20Caf%C3%A9!5e0!3m2!1sen!2sin!4v1755686705951!5m2!1sen!2sin"
+                    className="w-full h-full border-0"
+                    allowFullScreen={false}
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                  />
                 </div>
               </CardContent>
             </Card>
