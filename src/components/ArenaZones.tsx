@@ -14,9 +14,9 @@ const ArenaZones = () => {
       subtitle: "240 Hz rigs, Green Soul chairs",
       image: pcStandardImage,
       specs: [
-        { icon: Cpu, label: "RTX 4060 Ti", detail: "Intel i5-13400F" },
-        { icon: Monitor, label: "240Hz", detail: "24\" Gaming Monitor" },
-        { icon: Headphones, label: "HyperX Cloud", detail: "Gaming Headset" },
+        { icon: Cpu, label: "RTX 3060 Ti", detail: "AMD Ryzen 7 7700x" },
+        { icon: Monitor, label: "240Hz", detail: "25\" HD Gaming Monitor" },
+        { icon: Headphones, label: "Logitech G PRO X", detail: "Gaming Headset" },
         { icon: Wifi, label: "1 Gbps", detail: "Fiber Internet" }
       ],
       align: "left"
@@ -27,9 +27,9 @@ const ArenaZones = () => {
       subtitle: "Liquid-cooled beasts, RGB unleashed",
       image: pcPlusImage,
       specs: [
-        { icon: Cpu, label: "RTX 4080", detail: "Intel i7-13700KF" },
-        { icon: Monitor, label: "360Hz", detail: "27\" QHD Monitor" },
-        { icon: Headphones, label: "SteelSeries", detail: "Arctis Pro" },
+        { icon: Cpu, label: "RTX 4080", detail: "AMD Ryzen 9 7950x3D" },
+        { icon: Monitor, label: "240Hz", detail: "25\" HD Monitor" },
+        { icon: Headphones, label: "Logitech G PRO X", detail: "Gaming Headset" },
         { icon: Wifi, label: "1 Gbps", detail: "Ultra-Low Latency" }
       ],
       align: "right"
@@ -37,12 +37,12 @@ const ArenaZones = () => {
     {
       id: 3,
       title: "Console Lounge",
-      subtitle: "4K HDR on 65\" OLEDs, couch-ready",
+      subtitle: "4K HDR on 50\" OLEDs, couch-ready",
       image: consoleLoungeImage,
       specs: [
-        { icon: Monitor, label: "65\" OLED", detail: "4K 120Hz HDR" },
-        { icon: Cpu, label: "PS5 & Xbox", detail: "Series X Available" },
-        { icon: Headphones, label: "Premium Audio", detail: "Dolby Atmos" },
+        { icon: Monitor, label: "50\" FULL HD", detail: "4K 60Hz HDR" },
+        { icon: Cpu, label: "PS5 & Xbox X", detail: "Series X Available" },
+        { icon: Headphones, label: "Premium Audio", detail: "Dolby Audio" },
         { icon: Wifi, label: "Wireless", detail: "DualSense & Elite" }
       ],
       align: "left"
@@ -53,7 +53,7 @@ const ArenaZones = () => {
       subtitle: "True-force wheels, pedal-to-metal",
       image: racingSimImage,
       specs: [
-        { icon: Monitor, label: "49\" Curved", detail: "Ultra-Wide QHD" },
+        { icon: Monitor, label: "49\" LED", detail: "Full HD Experience" },
         { icon: Cpu, label: "Direct Drive", detail: "Force Feedback" },
         { icon: Headphones, label: "3-Pedal", detail: "Clutch, Brake, Gas" },
         { icon: Gauge, label: "Racing Sim", detail: "Wheel + Shifter Setup" }
