@@ -2,37 +2,15 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Calendar, Trophy, Users, Quote } from "lucide-react";
 import { tournaments as upcomingEvents } from "@/data/tournaments";
+import { getBadgeVariant, sanitizeLink } from "@/lib/statusUtils";
+import achievements from "@/data/achievements";
+import testimonials from "@/data/testimonials";
+import { socialLinks, SocialLinksType } from "@/lib/socialLinks";
 
 const CommunitySection = () => {
-
-  const testimonials = [
-    {
-      name: "Divyansh Bihani",
-      role: "Casual Gamer",
-      text: "THE EXPERIENCE OF GAMING IS VERY AMAZING THE STAFF ARE VERY POLITE THE PRIZE ARE ALSO VERY AFFORDABLE.",
-      rating: 5
-    },
-    {
-      name: "Eeshan Pandey",
-      role: "Pro Gamer",
-      text: "Amazing place for Gaming with reasonable prices!! Highly recommend:)",
-      rating: 5
-    },
-    {
-      name: "Altaf khan",
-      role: "Esports Enthusiast",
-      text: "Nice setup and premium environment.",
-      rating: 5
-    }
-  ];
-
-  const achievements = [
-    // { number: "100+", label: "Happy Gamers" },
-    // { number: "50+", label: "Tournaments Hosted" },
-    // { number: "₹5L+", label: "Prizes Distributed" },
-    // { number: "24/7", label: "Gaming Support" }
-  ];
-
+  const socialsChip = (socialLink: SocialLinksType) => <a href={socialLink.url} target="_blank" rel="noopener noreferrer" className="h-12 p-2 px-4 bg-primary/20 rounded-lg flex items-center justify-center cursor-pointer hover:bg-primary/30 transition-colors">
+    <span className="font-orbitron font-bold text-primary">{socialLink.label}</span>
+  </a>;
   return (
     <section id="community" className="py-20 px-6">
       <div className="container mx-auto max-w-7xl">
@@ -48,9 +26,12 @@ const CommunitySection = () => {
 
         {/* Achievements Grid */}
         {achievements.length > 0 && (
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16">
+          <div className="flex flex-wrap justify-center gap-6 mb-16">
             {achievements.map((achievement, index) => (
-              <div key={index} className="text-center glass-card p-6 rounded-xl">
+              <div
+                key={index}
+                className="w-1/2 md:w-1/4 text-center glass-card p-6 rounded-xl"
+              >
                 <div className="text-3xl md:text-4xl font-orbitron font-bold text-primary mb-2">
                   {achievement.number}
                 </div>
@@ -61,6 +42,7 @@ const CommunitySection = () => {
             ))}
           </div>
         )}
+
         <div className="grid lg:grid-cols-2 gap-12">
           {/* Upcoming Events */}
           <div className="space-y-6">
@@ -90,33 +72,48 @@ const CommunitySection = () => {
                         <CardTitle className="text-xl font-orbitron text-foreground">
                           {event.title}
                         </CardTitle>
-                        <Badge
-                          className={`font-rajdhani ${event.status === "Registration Open"
-                            ? "bg-primary text-primary-foreground"
-                            : event.status === "Early Bird"
-                              ? "bg-secondary text-secondary-foreground"
-                              : "bg-muted text-muted-foreground"
-                            }`}
-                        >
+
+                      </div>
+                      <div>
+
+                        <Badge variant={getBadgeVariant(event.status)} className="font-rajdhani">
                           {event.status}
                         </Badge>
                       </div>
                     </CardHeader>
                     <CardContent className="pt-0">
-                      <div className="grid grid-cols-3 gap-4 text-sm">
-                        <div className="flex items-center space-x-2">
+                      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 text-sm">
+                        <div className="flex items-center justify-center space-x-2">
                           <Calendar className="w-4 h-4 text-primary" />
                           <span>{event.date}</span>
                         </div>
-                        <div className="flex items-center space-x-2">
+
+                        <div className="flex items-center justify-center space-x-2">
                           <Trophy className="w-4 h-4 text-secondary" />
                           <span className="font-semibold">{event.prize}</span>
                         </div>
-                        <div className="flex items-center space-x-2">
+
+                        <div className="flex items-center justify-center space-x-2">
                           <Users className="w-4 h-4 text-primary" />
                           <span>{event.participants}</span>
                         </div>
+
+                        {/* CTA */}
+                        {event.link && (
+                          <div className="flex items-center col-span-full justify-center sm:justify-end">
+                            <a
+                              href={sanitizeLink(event.link)}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              aria-label={`Register for ${event.title}`}
+                              className="inline-flex items-center rounded-md border border-primary/10 px-4 py-2 text-sm font-medium hover:bg-primary/5 focus:outline-none focus:ring-2 focus:ring-primary/50 transition"
+                            >
+                              Register
+                            </a>
+                          </div>
+                        )}
                       </div>
+
                     </CardContent>
                   </Card>
                 ))
@@ -140,7 +137,7 @@ const CommunitySection = () => {
                         {testimonial.name.charAt(0)}
                       </div>
                       <div className="flex-1">
-                        <div className="flex items-center space-x-2 mb-2">
+                        <div className="flex items-center sm:space-x-2 mb-2 flex-wrap">
                           <h4 className="font-rajdhani font-semibold text-foreground">
                             {testimonial.name}
                           </h4>
@@ -166,7 +163,7 @@ const CommunitySection = () => {
         </div>
 
         {/* Social Media Section */}
-        <div className="mt-16 text-center glass-card p-8 rounded-2xl">
+        <div className="mt-16 text-center glass-card p-8 w-full rounded-2xl">
           <h3 className="text-2xl font-orbitron font-bold mb-4">
             Follow Us for Updates
           </h3>
@@ -174,23 +171,9 @@ const CommunitySection = () => {
             Stay connected with the latest tournaments, events, and gaming news.
           </p>
           <div className="flex justify-center space-x-6">
-            <a href="https://www.google.com/search?q=Skycrest+Gaming+Cafe" target="_blank"
-              rel="noopener noreferrer" className="h-12 p-2 bg-primary/20 rounded-lg flex items-center justify-center cursor-pointer hover:bg-primary/30 transition-colors">
-              <span className="font-orbitron font-bold text-primary">Google</span>
-            </a>
-
-            <a href="https://www.instagram.com/skycrest_gaming_cafe" target="_blank"
-              rel="noopener noreferrer">
-              <div className="p-2 h-12 bg-primary/20 rounded-lg flex items-center justify-center cursor-pointer hover:bg-primary/30 transition-colors">
-                <span className="font-orbitron font-bold text-primary">Instagram</span>
-              </div>
-            </a>
-            <a href="https://wa.me/919625805997?text=Hello%2C%20I%20am%20interested%20to%20know%20about%20your%20cafe" target="_blank"
-              rel="noopener noreferrer">
-              <div className="p-2 h-12 bg-primary/20 rounded-lg flex items-center justify-center cursor-pointer hover:bg-primary/30 transition-colors">
-                <span className="font-orbitron font-bold text-primary">Whatsapp</span>
-              </div>
-            </a>
+            {socialsChip(socialLinks.instagram)}
+            {socialsChip(socialLinks.google)}
+            {socialsChip(socialLinks.whatsapp)}
           </div>
         </div>
       </div>
