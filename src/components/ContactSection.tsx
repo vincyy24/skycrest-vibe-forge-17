@@ -18,11 +18,8 @@ const ContactSection = () => {
 					<div className="w-24 h-1 bg-gradient-to-r from-primary to-secondary rounded-full mx-auto mt-6"></div>
 				</div>
 				<div className="grid lg:grid-cols-2 gap-12">
-					{/* Booking Portal Link */}
-					<Card className="glass-card h-full flex flex-col relative">
-						{/* Neon Glow Absolute Background */}
-						<div className="pointer-events-none absolute inset-0 z-0 rounded-2xl" />
-
+					{/* Contact for Booking */}
+					<Card className="glass-card h-full flex flex-col">
 						<CardHeader>
 							<CardTitle className="text-2xl font-orbitron font-bold text-primary">
 								Book Your Gaming Session
@@ -31,36 +28,55 @@ const ContactSection = () => {
 
 						<CardContent className="flex-1 flex flex-col justify-between">
 							<p className="text-muted-foreground font-saira mb-6">
-								We've moved bookings to our online portal. Click
-								below to reserve your slot.
+								Ready to game? Contact us through any of these channels to book your slot:
 							</p>
 
-							<a
-								href="https://skycrest.booking.enes.tech/authentication"
-								target="_blank"
-								rel="noopener noreferrer"
-								className="relative flex-1 flex flex-col items-center justify-center rounded-md overflow-hidden hover:opacity-90 btn-outline-gaming group">
-								{/* Background */}
-								<div
-									className="absolute inset-0 bg-center bg-cover blur-[3px] brightness-50 group-hover:scale-125 transition-transform duration-500"
-									style={{
-										backgroundImage: `url(${reservationPageBg})`,
-									}}
-								/>
+							<div className="space-y-4">
+								{/* WhatsApp */}
+								<a
+									href="https://wa.me/919625805997?text=Hello%2C%20I%20want%20to%20book%20a%20gaming%20slot"
+									target="_blank"
+									rel="noopener noreferrer"
+									className="flex items-center space-x-4 p-4 bg-green-600/20 border border-green-600/30 rounded-lg hover:bg-green-600/30 transition-colors group">
+									<div className="p-3 bg-green-600/30 rounded-lg">
+										<span className="font-orbitron font-bold text-green-400">WA</span>
+									</div>
+									<div className="flex-1">
+										<h4 className="font-rajdhani font-semibold text-foreground">WhatsApp</h4>
+										<p className="text-sm text-muted-foreground font-saira">Quick booking via message</p>
+									</div>
+									<ExternalLink className="w-5 h-5 text-green-400 group-hover:scale-110 transition-transform" />
+								</a>
 
-								{/* Content */}
-								<div className="relative z-10 flex flex-col items-center">
-									<img
-										src={senetLogo}
-										alt="Go to Booking Portal"
-										className="h-20 w-auto mb-4"
-									/>
-									<span className="flex items-center gap-2 text-lg font-bold text-white drop-shadow">
-										Go to Booking Portal
-										<ExternalLink className="w-5 h-5" />
-									</span>
-								</div>
-							</a>
+								{/* Phone */}
+								<a
+									href="tel:+919625805997"
+									className="flex items-center space-x-4 p-4 bg-primary/20 border border-primary/30 rounded-lg hover:bg-primary/30 transition-colors group">
+									<div className="p-3 bg-primary/30 rounded-lg">
+										<Phone className="w-6 h-6 text-primary" />
+									</div>
+									<div className="flex-1">
+										<h4 className="font-rajdhani font-semibold text-foreground">Call Us</h4>
+										<p className="text-sm text-muted-foreground font-saira">+91 96258 05997</p>
+									</div>
+								</a>
+
+								{/* Instagram */}
+								<a
+									href="https://www.instagram.com/skycrest_gaming_cafe"
+									target="_blank"
+									rel="noopener noreferrer"
+									className="flex items-center space-x-4 p-4 bg-purple-600/20 border border-purple-600/30 rounded-lg hover:bg-purple-600/30 transition-colors group">
+									<div className="p-3 bg-purple-600/30 rounded-lg">
+										<span className="font-orbitron font-bold text-purple-400">IG</span>
+									</div>
+									<div className="flex-1">
+										<h4 className="font-rajdhani font-semibold text-foreground">Instagram</h4>
+										<p className="text-sm text-muted-foreground font-saira">DM us for booking</p>
+									</div>
+									<ExternalLink className="w-5 h-5 text-purple-400 group-hover:scale-110 transition-transform" />
+								</a>
+							</div>
 						</CardContent>
 					</Card>
 					{/* Contact Information */}

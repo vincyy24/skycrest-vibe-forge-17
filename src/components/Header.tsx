@@ -63,7 +63,7 @@ const Header = () => {
 					<Button
 						onClick={() => scrollToSection("booking")}
 						className="btn-gaming hidden md:block">
-						Book Now
+						Contact Us
 					</Button>
 				</div>
 			</div>

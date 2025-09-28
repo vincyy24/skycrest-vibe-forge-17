@@ -50,7 +50,7 @@ const HeroSection = () => {
 					<Button
 						onClick={() => scrollToSection("booking")}
 						className="btn-outline-gaming text-lg px-10 py-6">
-						Book Your Slot
+						Contact to Book
 					</Button>
 				</div>
 			</div>

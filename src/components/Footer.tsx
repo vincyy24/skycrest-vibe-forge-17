@@ -70,7 +70,7 @@ const Footer = () => {
                 onClick={() => scrollToSection("booking")}
                 className="block text-muted-foreground hover:text-primary transition-colors font-saira"
               >
-                Book Now
+                Contact Us
               </button>
             </div>
           </div>
