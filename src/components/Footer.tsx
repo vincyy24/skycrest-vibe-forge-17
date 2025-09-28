@@ -66,14 +66,12 @@ const Footer = () => {
               >
                 Tournaments
               </button>
-              <a
-                href="https://skycrest.booking.enes.tech/authentication"
-                target="_blank"
-                rel="noopener noreferrer"
+              <button
+                onClick={() => scrollToSection("booking")}
                 className="block text-muted-foreground hover:text-primary transition-colors font-saira"
               >
                 Book Now
-              </a>
+              </button>
             </div>
           </div>
 
