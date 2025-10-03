@@ -40,7 +40,7 @@ const ArenaZones = () => {
       subtitle: "4K HDR on 50\" OLEDs, couch-ready",
       image: consoleLoungeImage,
       specs: [
-        { icon: Monitor, label: "50\" FULL HD", detail: "4K 60Hz HDR" },
+        { icon: Monitor, label: "50\" ULTRA HD", detail: "4K 60Hz HDR" },
         { icon: Cpu, label: "PS5 & Xbox X", detail: "Series X Available" },
         { icon: Headphones, label: "Premium Audio", detail: "Dolby Audio" },
         { icon: Wifi, label: "Wireless", detail: "DualSense & Elite" }
