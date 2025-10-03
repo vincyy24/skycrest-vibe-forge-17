@@ -14,8 +14,8 @@ const ArenaZones = () => {
       subtitle: "240 Hz rigs, Green Soul chairs",
       image: pcStandardImage,
       specs: [
-        { icon: Cpu, label: "RTX 3060 Ti", detail: "AMD Ryzen 7 7700x" },
-        { icon: Monitor, label: "240Hz", detail: "25\" HD Gaming Monitor" },
+        { icon: Cpu, label: "RTX 3070 Ti", detail: "AMD Ryzen 7 7700x" },
+        { icon: Monitor, label: "240Hz Dell Alienware", detail: "25\" 99% sRGB Gaming Monitor" },
         { icon: Headphones, label: "Logitech G PRO X", detail: "Gaming Headset" },
         { icon: Wifi, label: "1 Gbps", detail: "Fiber Internet" }
       ],
@@ -28,7 +28,7 @@ const ArenaZones = () => {
       image: pcPlusImage,
       specs: [
         { icon: Cpu, label: "RTX 4080", detail: "AMD Ryzen 9 7950x3D" },
-        { icon: Monitor, label: "240Hz", detail: "25\" HD Monitor" },
+        { icon: Monitor, label: "240Hz Dell Alienware", detail: "25\" 99% sRGB Gaming Monitor" },
         { icon: Headphones, label: "Logitech G PRO X", detail: "Gaming Headset" },
         { icon: Wifi, label: "1 Gbps", detail: "Ultra-Low Latency" }
       ],
