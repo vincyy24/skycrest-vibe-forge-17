@@ -101,7 +101,13 @@ const Gallery = () => {
   }, [emblaApi, handleVideoPlayback]);
 
   const handleMediaClick = (index: number) => {
-    setZoomedMedia(index);
+    // If clicked item is not the main/centered one, scroll to it first
+    if (index !== selectedIndex && emblaApi) {
+      emblaApi.scrollTo(index);
+    } else {
+      // Only zoom if it's already the main item
+      setZoomedMedia(index);
+    }
   };
 
   const closeZoom = () => {
@@ -124,12 +130,12 @@ const Gallery = () => {
             {MEDIA_ITEMS.map((item, index) => (
               <div
                 key={index}
-                className={`flex-[0_0_70%] sm:flex-[0_0_50%] md:flex-[0_0_35%] lg:flex-[0_0_28%] transition-opacity duration-500 ${
+                className={`flex-[0_0_45%] sm:flex-[0_0_35%] md:flex-[0_0_25%] lg:flex-[0_0_20%] transition-opacity duration-500 ${
                   index === selectedIndex ? "opacity-100" : "opacity-40"
                 }`}
                 onClick={() => handleMediaClick(index)}
               >
-                <div className="relative aspect-[9/16] rounded-lg overflow-hidden glass-card cursor-pointer hover:scale-105 transition-transform duration-300">
+                <div className="relative aspect-[3/4] rounded-lg overflow-hidden glass-card cursor-pointer hover:scale-105 transition-transform duration-300">
                   {item.type === "video" ? (
                     <video
                       ref={(el) => (videoRefs.current[index] = el)}
