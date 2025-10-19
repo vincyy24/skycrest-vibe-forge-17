@@ -16,11 +16,13 @@ import img4 from "@/assets/gallery-images/img4.webp";
 import img5 from "@/assets/gallery-images/img5.webp";
 import img6 from "@/assets/gallery-images/img6.webp";
 import img7 from "@/assets/gallery-images/img7.webp";
+import reel1_poster from "@/assets/reels/thumbnails/reel1.png"
+import reel2_poster from "@/assets/reels/thumbnails/reel2.png"
 
 // Media items configuration
 const MEDIA_ITEMS = [
-  { type: "video", lowSrc: reel1Low, highSrc: reel1High },
-  { type: "video", lowSrc: reel2Low, highSrc: reel2High },
+  { type: "video", lowSrc: reel1Low, highSrc: reel1High, poster: reel1_poster },
+  { type: "video", lowSrc: reel2Low, highSrc: reel2High, poster: reel2_poster},
   { type: "image", src: img1 },
   { type: "image", src: img2 },
   { type: "image", src: img3 },
@@ -172,6 +174,7 @@ const Gallery = () => {
                       muted
                       loop={false}
                       onEnded={handleVideoEnd}
+                      poster={item.poster}
                     />
                   ) : (
                     <img
