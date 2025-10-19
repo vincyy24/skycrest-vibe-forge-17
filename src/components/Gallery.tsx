@@ -124,7 +124,7 @@ const Gallery = () => {
   }, [emblaApi]);
 
   return (
-    <section className="relative pt-16 pb-12 md:pt-20 md:pb-16 overflow-hidden bg-background">
+    <section id="gallery" className="relative pt-16 pb-12 md:pt-20 md:pb-16 overflow-hidden bg-background">
       {/* Vignette Overlays */}
       <div className="absolute left-0 top-0 bottom-0 w-1/4 bg-gradient-to-r from-background to-transparent z-10 pointer-events-none" />
       <div className="absolute right-0 top-0 bottom-0 w-1/4 bg-gradient-to-l from-background to-transparent z-10 pointer-events-none" />

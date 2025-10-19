@@ -58,7 +58,7 @@ const HeroSection = () => {
 			{/* Scroll Indicator */}
 			<div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
 				<button
-					onClick={() => scrollToSection("about")}
+					onClick={() => scrollToSection("gallery")}
 					className="p-2 rounded-full glass-card hover:bg-primary/20 transition-colors">
 					<ChevronDown className="w-6 h-6 text-primary" />
 				</button>
