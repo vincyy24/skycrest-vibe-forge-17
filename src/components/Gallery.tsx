@@ -3,17 +3,30 @@ import useEmblaCarousel from "embla-carousel-react";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
 import { X } from "lucide-react";
 
+// Import media files
+import reel1Low from "@/assets/reels/reel1_low.mp4";
+import reel1High from "@/assets/reels/reel1_high.mp4";
+import reel2Low from "@/assets/reels/reel2_low.mp4";
+import reel2High from "@/assets/reels/reel2_high.mp4";
+import img1 from "@/assets/gallery-images/img1.webp";
+import img2 from "@/assets/gallery-images/img2.webp";
+import img3 from "@/assets/gallery-images/img3.webp";
+import img4 from "@/assets/gallery-images/img4.webp";
+import img5 from "@/assets/gallery-images/img5.webp";
+import img6 from "@/assets/gallery-images/img6.webp";
+import img7 from "@/assets/gallery-images/img7.webp";
+
 // Media items configuration
 const MEDIA_ITEMS = [
-  { type: "video", lowSrc: "/src/assets/reels/reel1_low.mp4", highSrc: "/src/assets/reels/reel1_high.mp4" },
-  { type: "video", lowSrc: "/src/assets/reels/reel2_low.mp4", highSrc: "/src/assets/reels/reel2_high.mp4" },
-  { type: "image", src: "/src/assets/gallery-images/img1.webp" },
-  { type: "image", src: "/src/assets/gallery-images/img2.webp" },
-  { type: "image", src: "/src/assets/gallery-images/img3.webp" },
-  { type: "image", src: "/src/assets/gallery-images/img4.webp" },
-  { type: "image", src: "/src/assets/gallery-images/img5.webp" },
-  { type: "image", src: "/src/assets/gallery-images/img6.webp" },
-  { type: "image", src: "/src/assets/gallery-images/img7.webp" },
+  { type: "video", lowSrc: reel1Low, highSrc: reel1High },
+  { type: "video", lowSrc: reel2Low, highSrc: reel2High },
+  { type: "image", src: img1 },
+  { type: "image", src: img2 },
+  { type: "image", src: img3 },
+  { type: "image", src: img4 },
+  { type: "image", src: img5 },
+  { type: "image", src: img6 },
+  { type: "image", src: img7 },
 ];
 
 const Gallery = () => {
@@ -96,22 +109,22 @@ const Gallery = () => {
   };
 
   return (
-    <section className="relative py-20 overflow-hidden bg-background">
+    <section className="relative py-12 md:py-16 overflow-hidden bg-background">
       {/* Vignette Overlays */}
       <div className="absolute left-0 top-0 bottom-0 w-1/4 bg-gradient-to-r from-background to-transparent z-10 pointer-events-none" />
       <div className="absolute right-0 top-0 bottom-0 w-1/4 bg-gradient-to-l from-background to-transparent z-10 pointer-events-none" />
 
       <div className="container mx-auto px-4">
-        <h2 className="text-4xl md:text-6xl font-orbitron font-bold text-center mb-12 neon-text">
+        <h2 className="text-3xl md:text-4xl font-orbitron font-bold text-center mb-8 neon-text">
           Gallery
         </h2>
 
         <div className="overflow-hidden" ref={emblaRef}>
-          <div className="flex gap-6">
+          <div className="flex gap-3 md:gap-4">
             {MEDIA_ITEMS.map((item, index) => (
               <div
                 key={index}
-                className={`flex-[0_0_80%] md:flex-[0_0_60%] lg:flex-[0_0_50%] transition-opacity duration-500 ${
+                className={`flex-[0_0_70%] sm:flex-[0_0_50%] md:flex-[0_0_35%] lg:flex-[0_0_28%] transition-opacity duration-500 ${
                   index === selectedIndex ? "opacity-100" : "opacity-40"
                 }`}
                 onClick={() => handleMediaClick(index)}
