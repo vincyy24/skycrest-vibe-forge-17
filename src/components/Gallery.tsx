@@ -1,7 +1,8 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
-import { X } from "lucide-react";
+import { X, ChevronLeft, ChevronRight } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 // Import media files
 import reel1Low from "@/assets/reels/reel1_low.mp4";
@@ -114,16 +115,42 @@ const Gallery = () => {
     setZoomedMedia(null);
   };
 
+  const scrollPrev = useCallback(() => {
+    if (emblaApi) emblaApi.scrollPrev();
+  }, [emblaApi]);
+
+  const scrollNext = useCallback(() => {
+    if (emblaApi) emblaApi.scrollNext();
+  }, [emblaApi]);
+
   return (
     <section className="relative pt-16 pb-12 md:pt-20 md:pb-16 overflow-hidden bg-background">
       {/* Vignette Overlays */}
       <div className="absolute left-0 top-0 bottom-0 w-1/4 bg-gradient-to-r from-background to-transparent z-10 pointer-events-none" />
       <div className="absolute right-0 top-0 bottom-0 w-1/4 bg-gradient-to-l from-background to-transparent z-10 pointer-events-none" />
 
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-4 relative">
         <h2 className="text-3xl md:text-4xl font-orbitron font-bold text-center mb-8 neon-text">
           Gallery
         </h2>
+
+        {/* Navigation Arrows */}
+        <Button
+          variant="outline"
+          size="icon"
+          onClick={scrollPrev}
+          className="absolute left-4 top-1/2 -translate-y-1/2 z-20 h-12 w-12 rounded-full bg-background/80 backdrop-blur-sm border-primary/20 hover:bg-primary/20 hover:border-primary/40"
+        >
+          <ChevronLeft className="h-6 w-6" />
+        </Button>
+        <Button
+          variant="outline"
+          size="icon"
+          onClick={scrollNext}
+          className="absolute right-4 top-1/2 -translate-y-1/2 z-20 h-12 w-12 rounded-full bg-background/80 backdrop-blur-sm border-primary/20 hover:bg-primary/20 hover:border-primary/40"
+        >
+          <ChevronRight className="h-6 w-6" />
+        </Button>
 
         <div className="overflow-hidden" ref={emblaRef}>
           <div className="flex gap-3 md:gap-4">
