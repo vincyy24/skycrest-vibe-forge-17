@@ -175,6 +175,7 @@ const Gallery = () => {
                       loop={false}
                       onEnded={handleVideoEnd}
                       poster={item.poster}
+                      preload="metadata"
                     />
                   ) : (
                     <img
@@ -208,6 +209,8 @@ const Gallery = () => {
                   controls
                   autoPlay
                   playsInline
+                  poster={MEDIA_ITEMS[zoomedMedia].poster}
+                  preload="metadata"
                 />
               ) : (
                 <img
