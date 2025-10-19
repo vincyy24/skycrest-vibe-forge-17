@@ -7,11 +7,13 @@ import { X } from "lucide-react";
 const MEDIA_ITEMS = [
   { type: "video", lowSrc: "/src/assets/reels/reel1_low.mp4", highSrc: "/src/assets/reels/reel1_high.mp4" },
   { type: "video", lowSrc: "/src/assets/reels/reel2_low.mp4", highSrc: "/src/assets/reels/reel2_high.mp4" },
-  { type: "image", src: "/src/assets/gallery-images/img1.jpg" },
-  { type: "image", src: "/src/assets/gallery-images/img2.jpg" },
-  { type: "image", src: "/src/assets/gallery-images/img3.jpg" },
-  { type: "image", src: "/src/assets/gallery-images/img4.jpg" },
-  { type: "image", src: "/src/assets/gallery-images/img5.jpg" },
+  { type: "image", src: "/src/assets/gallery-images/img1.webp" },
+  { type: "image", src: "/src/assets/gallery-images/img2.webp" },
+  { type: "image", src: "/src/assets/gallery-images/img3.webp" },
+  { type: "image", src: "/src/assets/gallery-images/img4.webp" },
+  { type: "image", src: "/src/assets/gallery-images/img5.webp" },
+  { type: "image", src: "/src/assets/gallery-images/img6.webp" },
+  { type: "image", src: "/src/assets/gallery-images/img7.webp" },
 ];
 
 const Gallery = () => {
