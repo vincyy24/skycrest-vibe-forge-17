@@ -1,12 +1,14 @@
 import { SitemapStream, streamToPromise } from 'sitemap';
 import { createWriteStream } from 'fs';
 import { resolve } from 'path';
+import fetch from 'node-fetch';
+
 
 const hostname = 'https://skycrestgaming.com';
 
 async function generateSitemap() {
     const sitemap = new SitemapStream({ hostname });
-    const writeStream = createWriteStream(resolve('./public/sitemap.xml'));
+    const writeStream = createWriteStream(resolve(process.cwd(), 'public', 'sitemap.xml'));
 
     // --- Define your site routes ---
     const routes = [
@@ -28,8 +30,13 @@ async function generateSitemap() {
     sitemap.end();
 
     const data = await streamToPromise(sitemap);
-    writeStream.write(data.toString());
+    writeStream.end(data.toString());
     console.log('✅ Sitemap generated successfully.');
+
+    // Notify Google
+    await fetch(`https://www.google.com/ping?sitemap=${hostname}/sitemap.xml`);
+    console.log('✅ Google notified of sitemap update.');
+
 }
 
 generateSitemap().catch(console.error);

@@ -1,7 +1,8 @@
-name: Build & Deploy (Vite → gh-pages)
+name: Build & Deploy (Vite -> gh-pages)
 on:
   push:
     branches: [ main ]
+
 permissions:
   contents: write
 
@@ -23,6 +24,9 @@ jobs:
 
       - name: Build
         run: npm run build
+
+      - name: Generate Sitemap
+        run: npm run generate:sitemap
 
       # SPA fix
       - name: Copy 404
