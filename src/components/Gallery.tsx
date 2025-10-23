@@ -18,6 +18,7 @@ import img6 from "@/assets/gallery-images/img6.webp";
 import img7 from "@/assets/gallery-images/img7.webp";
 import reel1_poster from "@/assets/reels/thumbnails/reel1.png";
 import reel2_poster from "@/assets/reels/thumbnails/reel2.png";
+import NavigatorWithConnection from "@/types/NavigatorWithConnection";
 
 // Media items configuration
 const MEDIA_ITEMS = [
@@ -42,7 +43,8 @@ const Gallery = () => {
 
   // Detect network quality
   useEffect(() => {
-    const connection = (navigator as any).connection || (navigator as any).mozConnection || (navigator as any).webkitConnection;
+    const nav = navigator as NavigatorWithConnection;
+    const connection = nav.connection || nav.mozConnection || nav.webkitConnection;
     if (connection) {
       const effectiveType = connection.effectiveType;
       setIsHighQuality(effectiveType !== "slow-2g" && effectiveType !== "2g" && effectiveType !== "3g");
