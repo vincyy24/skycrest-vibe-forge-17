@@ -16,13 +16,13 @@ import img4 from "@/assets/gallery-images/img4.webp";
 import img5 from "@/assets/gallery-images/img5.webp";
 import img6 from "@/assets/gallery-images/img6.webp";
 import img7 from "@/assets/gallery-images/img7.webp";
-import reel1_poster from "@/assets/reels/thumbnails/reel1.png"
-import reel2_poster from "@/assets/reels/thumbnails/reel2.png"
+import reel1_poster from "@/assets/reels/thumbnails/reel1.png";
+import reel2_poster from "@/assets/reels/thumbnails/reel2.png";
 
 // Media items configuration
 const MEDIA_ITEMS = [
   { type: "video", lowSrc: reel1Low, highSrc: reel1High, poster: reel1_poster },
-  { type: "video", lowSrc: reel2Low, highSrc: reel2High, poster: reel2_poster},
+  { type: "video", lowSrc: reel2Low, highSrc: reel2High, poster: reel2_poster },
   { type: "image", src: img1 },
   { type: "image", src: img2 },
   { type: "image", src: img3 },
@@ -54,7 +54,7 @@ const Gallery = () => {
     videoRefs.current.forEach((video, i) => {
       if (video) {
         if (i === index && MEDIA_ITEMS[i].type === "video") {
-          video.play().catch(() => {});
+          video.play().catch(() => { });
         } else {
           video.pause();
           video.currentTime = 0;
@@ -155,13 +155,12 @@ const Gallery = () => {
         </Button>
 
         <div className="overflow-hidden" ref={emblaRef}>
-          <div className="flex gap-3 md:gap-4">
+          <div className="flex gap-3 md:gap-4 pl-3 md:pl-4">
             {MEDIA_ITEMS.map((item, index) => (
               <div
                 key={index}
-                className={`flex-[0_0_45%] sm:flex-[0_0_35%] md:flex-[0_0_25%] lg:flex-[0_0_20%] transition-opacity duration-500 ${
-                  index === selectedIndex ? "opacity-100" : "opacity-40"
-                }`}
+                className={`flex-[0_0_45%] sm:flex-[0_0_35%] md:flex-[0_0_25%] lg:flex-[0_0_20%] transition-opacity duration-500 ${index === selectedIndex ? "opacity-100" : "opacity-40"
+                  }`}
                 onClick={() => handleMediaClick(index)}
               >
                 <div className="relative aspect-[3/4] rounded-lg overflow-hidden glass-card cursor-pointer hover:scale-105 transition-transform duration-300">
