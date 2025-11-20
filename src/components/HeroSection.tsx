@@ -43,7 +43,7 @@ const HeroSection = () => {
 
 				<div className="flex flex-col sm:flex-row gap-6 justify-center items-center pt-8">
 					<Button
-						onClick={() => scrollToSection("arena")}
+						onClick={() => scrollToSection("gallery")}
 						className="btn-gaming text-lg px-10 py-6">
 						Explore Arena
 					</Button>
