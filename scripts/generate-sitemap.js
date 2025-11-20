@@ -13,7 +13,7 @@ async function generateSitemap() {
     // --- Define your site routes ---
     const routes = [
         '/',            // main page
-        // '/about',     // example if you expand later
+        // '/about',     // example if expand later
         // '/menu',
         // '/contact'
     ];
